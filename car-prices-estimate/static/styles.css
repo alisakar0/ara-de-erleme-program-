@@ -1,0 +1,49 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url("Inkedarabamkacpara-main_LI.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    position: absolute;
+    top: 20%; /* Yükseklik merkezine göre */
+    right: 20px; /* Sağ kenardan 20px uzaklık */
+    transform: translateY(-50%); /* Yükseklik merkezini ayarla */
+    background-color: #1f5e82;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Kutunun genişliği */
+}
+
+.box h1, .box p, .box form {
+    margin: 0 0 10px; /* Alt margin ile aralarındaki boşluk */
+}
+
+.box a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.box a:hover {
+    text-decoration: underline;
+}
+
+
+#sat-logo {
+    width: 204px;
+}
+
