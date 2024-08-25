@@ -1,1 +1,76 @@
-# araç değerleme-programı
+# Araç Fiyatlama ve Randevu Sistemi
+
+Bu proje, bir araç fiyatlama ve randevu alma sistemidir. Kullanıcılar, araç markasını ve modelini seçerek araçlarının değerini öğrenebilir ve ayrıca randevu talebinde bulunabilirler. Proje, Flask tabanlı bir web uygulamasıdır ve araç fiyatlandırma modeli olarak `best_model.pkl` dosyasını kullanır.
+
+## İçerik
+
+- [Özellikler](#özellikler)
+- [Kurulum](#kurulum)
+- [Kullanım](#kullanım)
+- [API](#api)
+- [Teknolojiler](#teknolojiler)
+
+## Özellikler
+
+- Kullanıcılar, belirli bir marka ve modele sahip araçlar için fiyat teklifi alabilir.
+- Hasarlı veya değişen parçaları seçerek araç değerini hesaplama.
+- Randevu talebi gönderme ve e-posta bildirimi alma.
+- Kullanıcı dostu arayüz ile kolay navigasyon.
+
+## Kurulum
+
+1. Gerekli kütüphaneleri yükleyin:
+    ```bash
+    pip install Flask pandas joblib scikit-learn xgboost flask-mail
+    ```
+
+2. `best_model.pkl` model dosyasını proje dizinine ekleyin.
+
+3. E-posta ayarlarınızı `app.config` içerisinde yapılandırın:
+    ```python
+    app.config['MAIL_SERVER'] = 'your_mail_server'
+    app.config['MAIL_PORT'] = 465
+    app.config['MAIL_USE_TLS'] = False
+    app.config['MAIL_USE_SSL'] = True
+    app.config['MAIL_USERNAME'] = 'your_email'
+    app.config['MAIL_PASSWORD'] = 'your_password'
+    ```
+
+4. Uygulamayı başlatın:
+    ```bash
+    python app.py
+    ```
+
+## Kullanım
+
+- Ana sayfada araç markasını seçerek başlamalısınız. Ardından model ve diğer araç özelliklerini seçip `Teklif al` butonuna tıklayın.
+- Araç fiyatı hesaplandıktan sonra, `Randevu al` butonuna tıklayarak randevu talebinde bulunabilirsiniz.
+
+## API
+
+### `/predict`
+
+- Yöntem: `POST`
+- Açıklama: Belirtilen araç özelliklerine göre fiyat tahmini yapar.
+- Parametreler:
+    - `Marka`: Araç markası (örn. `FIAT`)
+    - `Yil`: Araç üretim yılı (örn. `2010`)
+    - `Model`: Araç modeli (örn. `Panda`)
+    - ve diğer araç özellikleri.
+
+### `/appointment`
+
+- Yöntem: `POST`
+- Açıklama: Kullanıcı bilgilerine göre randevu talebi oluşturur ve e-posta gönderir.
+- Parametreler:
+    - `name`: Kullanıcı adı
+    - `surname`: Kullanıcı soyadı
+    - `email`: Kullanıcı e-posta adresi
+    - ve diğer gerekli bilgiler.
+
+## Teknolojiler
+
+- Python ve Flask: Web uygulama geliştirme
+- Pandas ve Scikit-learn: Veri işleme ve model eğitimi
+- XGBoost: Araç fiyat tahmini modeli
+- Flask-Mail: Randevu bildirim e-postaları göndermek için
