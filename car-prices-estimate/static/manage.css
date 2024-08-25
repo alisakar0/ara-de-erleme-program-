@@ -1,0 +1,92 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Açık bir arka plan rengi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Manage-box {
+    width: 90%;
+    max-width: 1000px; 
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.Manage-box aside {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10%;
+    position: relative;
+}
+
+
+.Manage-box img {
+    position: absolute;
+    top: 0;
+    z-index: 9999999;
+    width: 65px;
+    left: 0;
+    cursor: pointer;
+}
+
+
+.Manage-box h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.Manage-box form {
+    display: grid;
+    gap: 15px;
+}
+
+.Manage-box label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold; 
+    color: #555;
+}
+
+.Manage-box input, .Manage-box select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; 
+    box-sizing: border-box; 
+    background-color: #f9f9f9;
+}
+
+.Manage-box input[type="number"]::-webkit-inner-spin-button,
+.Manage-box input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button {
+    grid-column: span 3; 
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+button:active {
+    background-color: maroon;
+}

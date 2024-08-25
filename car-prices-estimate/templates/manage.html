@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="manage.css">
+    <title>Randevunu Yönet</title>
+</head>
+<body>
+    <div class="Manage-box">
+        <aside>
+            <img src="360_F_222820631_WRuNhAnUV3N8V78LYAo2SYaPY8bVqvbD.jpg" alt="Geri Dön" id="back-button">
+            <h1>Randevu Al</h1>
+        </aside>
+    
+        <form id="appointment-form" action="/appointment" method="POST">
+            <span>
+                <label for="name">İsim</label> 
+                <input type="text" name="name" id="name" required>
+            </span>
+    
+            <span>
+                <label for="surname">Soyisim</label> 
+                <input type="text" name="surname" id="surname" required>
+            </span>
+    
+            <span>
+                <label for="birthdate">Doğum Tarihi</label> 
+                <input type="date" name="birthdate" id="birthdate" required>
+            </span>
+    
+            <span>
+                <label for="email">E-Posta</label> 
+                <input type="email" name="email" id="email" required>
+            </span>
+    
+            <span>
+                <label for="phone">Telefon Numarası</label> 
+                <input type="tel" name="phone" id="phone" required>
+            </span>
+    
+            <span>
+                <label for="role">Rolünüz</label> 
+                <select name="role" id="role" required>
+                    <option value="buyer">Alıcıyım</option>
+                    <option value="seller">Satıcıyım</option>
+                </select>
+            </span>
+    
+            <span>
+                <label for="car-make">Araba Markası</label> 
+                <input type="text" name="car-make" id="car-make" required>
+            </span>
+    
+            <span>
+                <label for="car-model">Araba Modeli</label> 
+                <input type="text" name="car-model" id="car-model" required>
+            </span>
+
+            <span>
+                <label for="model-year">Model yılı</label>
+                <input type="text" name="model-year" id="model-year" required>
+            </span>
+    
+            <button type="submit">Randevu Al</button>
+        </form>
+        
+        <!-- Başarı mesajı alanı -->
+        <div id="success-message" style="display: none;">
+            <h2>Randevu Alındı</h2>
+        </div>
+    </div>
+
+    <script src="manage.js"></script>
+</body>
+</html>
